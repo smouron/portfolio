@@ -5,65 +5,20 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Liste d'outils sur la toile</title>
+	<title>Réalisations - Développement et intégration</title>
+	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
-	<header id="masthead" class="site-header directionRow">
-		<div id="logo" class="logo">
-			<a href="./index.html">
-				<img src="./assets/images/stephane_mouron.png" alt="Logo Stéphane Mouron">
-			</a>
-		</div>
-		<nav id="main-navigation" class="main-navigation">
-			<div id="main-destock-menu" class="main-destock-menu directionRow">
-				<ul class="link-in directionRow">
-					<li class="destock-menu__item menu-item">
-						<a href="./OpenClassrooms.html">OpenClassrooms</a>
-					</li>
-					<ul class="hidden">
-						<li class="destock-menu__item menu-item"><a href="#training_courses">Développement</a></li>
-						<li class="destock-menu__item menu-item"><a href="#development_exercises">Exercices</a></li>
-					</ul>
-					<li class="destock-menu__item menu-item">
-						<a href="./FromScratch.html">From Scratch</a>
-					</li>
-					<li class="destock-menu__item menu-item">
-						<a href="./OutilsWeb.html">Outils Web</a>
-					</li>
-				</ul>
-			</div>
-			<div id="main-mobile-menu" class="main-mobile-menu directionRow">
-				<button id="open" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"
-					onclick="window.location.href = '#main-mobile-menu';">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-				<button id="close" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"
-					onclick="window.location.href = '#';">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-				<div class="mobile-menu__content">
-					<ul>
-						<li class="mobile-menu__item menu-item"><a
-								href="./index.html/#training_courses">Développement</a></li>
-						<li class="mobile-menu__item menu-item"><a
-								href="./index.html/#development_exercises">Exercices</a></li>
-						<li class="mobile-menu__item menu-item">
-							<a href="./FromScratch.html">From Scratch</a>
-						</li>
-						<li class="mobile-menu__item menu-item">
-							<a href="./OutilsWeb.html">Outils Web</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
+    <?php 
+    // include_once('./variables.php'); 
+    ?> 
+
+    <!-- Header -->
+    <?php include_once ('header.php'); ?>
+	
 	<main>
 		<div>
 			<h1>Liste d'outils et de librairies sur la toile</h1>
@@ -892,14 +847,8 @@
 		</section>
 	</main>
 
-	<footer>
-		<p>
-			<strong>Copyright ©</strong>2023
-			<a href="https://portfolio.stephane-mouron.fr/" target="_blank" rel="noopener">
-				Stéphane Mouron</em></a>
-			- <em>Tous droits réservés
-		</p>
-	</footer>
+<!-- FOOTER -->
+<?php include_once './footer.php'; ?>
 
 </body>
 
