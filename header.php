@@ -12,21 +12,14 @@
 			<div id="main-destock-menu" class="main-destock-menu directionRow">
 				<ul class="link-in directionRow">
 					<li class="destock-menu__item menu-item">
-						<a href="./OpenClassrooms.php">OpenClassrooms</a>
-					</li>
-					<ul class="hidden">
-						<li class="destock-menu__item menu-item"><a href="#training_courses">Développement</a></li>
-						<li class="destock-menu__item menu-item"><a href="#development_exercises">Exercices</a></li>
-					</ul>
-					<li class="destock-menu__item menu-item">
-						<a href="./FromScratch.php">From Scratch</a>
-					</li>
-					<li class="destock-menu__item menu-item">
-						<a href="./perso.php">Stéphane Mouron</a>
-					</li>
+						<a href="./index.php">Mes réalisations</a>
+					</li>					
 					<li class="destock-menu__item menu-item">
 						<a href="./OutilsWeb.php">Outils Web</a>
-					</li>
+					</li>					
+					<li class="destock-menu__item menu-item">
+						<a href="https://stephane-mouron.fr/cv/index.html" target="_blank">Mon CV</a>
+					</li>	
 				</ul>
 			</div>
 			<div id="main-mobile-menu" class="main-mobile-menu directionRow">
@@ -37,7 +30,7 @@
 					<span></span>
 				</button>
 				<button id="close" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"
-					onclick="window.location.href = '#';">
+					onclick="window.location.href = '#main-navigation';">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -45,16 +38,13 @@
 				<div class="mobile-menu__content">
 					<ul>
 						<li class="mobile-menu__item menu-item">
-							<a href="./OpenClassrooms.php">OpenClassrooms</a>
-						</li>
-						<li class="mobile-menu__item menu-item">
-							<a href="./FromScratch.php">From Scratch</a>
-						</li>						
-						<li class="mobile-menu__item menu-item">
-							<a href="./perso.php">Stéphane Mouron</a>
+							<a href="./index.php">Mes réalisations</a>
 						</li>
 						<li class="mobile-menu__item menu-item">
 							<a href="./OutilsWeb.php">Outils Web</a>
+						</li>
+						<li class="mobile-menu__item menu-item">
+							<a href="https://stephane-mouron.fr/cv/index.html">Mon CV</a>
 						</li>
 					</ul>
 				</div>

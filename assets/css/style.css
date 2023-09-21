@@ -68,7 +68,7 @@ h1 {
 }
 
 
-h2, h3, h4, h5, p, span  {
+h2, h3, h4, h5, p, span, label  {
   color: var(--color2);
 }
 
@@ -77,7 +77,6 @@ h1, h2, h3, h4, h5 {
 }
 
 p {
-  font-family: 'Karla', sans-serif;
   font-size: 1rem;
 }
 
@@ -123,6 +122,11 @@ article:hover .icone_php image,
 }
 
 /* GENERIQUE */
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
 .directionRow {
   display: flex;
   flex-direction: row;
@@ -139,7 +143,7 @@ article:hover .icone_php image,
 .hidden {
   opacity: 0;
   visibility: hidden;
-  display: none;
+  display: none !important;
 }
 
 /*  --- HEADER ---  */
@@ -411,6 +415,115 @@ header.site-header::after {
 
 /* MAIN */
 
+/* FILTRES */
+
+.container__filter {
+  width: 80%;
+  min-width: 125px;
+  max-width: 1150px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.container__filter form {
+  justify-content: space-around;  
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 20px 0;
+}   
+
+.container__filter .filterleft {
+  gap: 20px;
+  width: 100%;
+  margin: auto; 
+  justify-content: center;
+}    
+
+.container__filter label {
+  text-transform: uppercase;
+  line-height: 1.8rem;
+  
+}
+
+.container__filter label,
+.container__filter option {    
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container__filter select {
+  height: 40px !important;
+}
+
+.container__filter .filter_select {
+  width: 270px;
+  position: relative;
+  display: inline-block;
+}
+
+.container__filter .filter_option {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  border-radius: 0;
+  padding: 0 30px 0 10px;
+}
+
+.container__filter {
+  position: relative;
+
+}
+
+/* On cache la flèche d'origne des sélecteurs car non modifiable */
+.container__filter select { 
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.container__filter select::-ms-expand {
+  display: none; /* supprimer la fléche par défaut en IE 10 et 11 */
+}
+
+.container__filter select option {
+  color: var(--color4);
+  background-color: var(--color2);
+  border: none;
+}
+
+
+/* supprimer la fléche par défaut en IE 10 et 11 */
+.container__filter select::-ms-expand {
+  display: none; 
+}
+
+.container__filter .dashicons,
+.container__filter i {  
+  /* width: 9px; */
+  /* height: 7px;   */
+  position: absolute;
+  display: inline-block;
+  bottom: 8px;
+  right: 8px;
+  font-size: 1.5rem;
+}
+
+.select__open {
+  transition: all 0.3s ease;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg); 
+}
+
+.select__close {
+  transition: all 0.3s ease;
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg); 
+}
+
 article,
 .article {
   width: 440px;
@@ -467,6 +580,17 @@ article:hover img,
   filter: grayscale(0%);
 	-webkit-filter: grayscale(0%);
 	-moz-filter: grayscale(10%);	
+}
+
+#message {
+  width: 100vw;
+  height: auto;
+}
+
+#message p {
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 20px;
 }
 
 /* Utilisation d'un Loader comme séparateur de section */
@@ -600,6 +724,11 @@ footer {
   text-align: center;
   font-size: 12px;
   box-shadow: 0px -5px 16px #27187e57;
+}
+
+footer a {
+  font-weight: 900;
+  color: var(--color9);
 }
 
 /*  **********************************  */

@@ -6,9 +6,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Réalisations - Développement et intégration</title>
-	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link rel="stylesheet" href="./assets/css/style.css" />
+	<link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -22,9 +21,53 @@
     <main>		
 		<section class="development">
 			<h1>Les différentes réalisations que j'ai effectuées</h1>
+			<!-- Mise en place de filtres pour afficher les réalisations -->
+			<div class="container__filter">
+				<form class="flexrow" method="post" >	
+					<div class="filter_select flexcolumn">      
+						<label for="filter_type">Type des réalisations</label>
+						<i class="fa-solid fa-caret-down filter_type select__close"></i>
+						<select class="filter_option filter_type" name="filter_type" id="filter_type">
+							<option class="filter_type__value" value="">Tout</option>
+							<option class="filter_type__value" value="parcours">Parcours de formation</option>
+							<option class="filter_type__value" value="exercice">Exercices de développement</option>
+							<option class="filter_type__value" value="perso">Personnelles</option>							
+							<!-- <option class="filter_type__value" value="clients">Autres</option> -->
+						</select>
+					</div>	       
+					<div class="filter_select flexcolumn">   
+						<label for="filter_origin">Origine des réalisations</label>
+						<i class="fa-solid fa-caret-down filter_origin select__close"></i>
+						<select class="filter_option filter_origin" name="filter_origin" id="filter_origin">							
+							<option class="filter_origin__value" value="">Tout</option>
+							<option class="filter_origin__value" value="openclassrooms">OpenClassrooms</option>
+							<option class="filter_origin__value" value="fromscratch">From Scratch</option>
+							<option class="filter_origin__value" value="stephanemouron">Stéphane Mouron</option>
+						</select>
+					</div>
+				</form>
+			</div>
 			<div id="liste-achievements" class="directionRow">
                 <?php foreach ($achievements as $realization): ?> 
-					<a class="article realization" href="<?php echo $realization['link']; ?>" target="<?php echo $realization['target']; ?>">
+					<?php 
+					// filtre pour supprimer : " " -> les espaces, "\r\n" -> le saut de ligne
+					$str1 = array(" ", "\t", "\r\n");
+					// filtre pour remplacer les e accentués par e
+					$str2 = array("é", "è", "ê");
+
+					// Récupération de l'origine de la réalisation pour l'ajouter en class
+					$origin = strtolower($realization['origine']);
+    				$origin = str_replace($str1, "", $origin);  					
+    				$origin = str_replace($str2, "e", $origin);  
+
+					// Récupération du type de réalisation pour l'ajouter en class
+					$type = strtolower($realization['type']);
+    				$type = str_replace($str1, "", $type);  					
+    				$type = str_replace($str2, "e", $type); 
+					?> 
+
+					<!-- Génération de la carte de la réalisation -->
+					<a class="article realization <?php echo($origin . " " . $type); ?>" href="<?php echo $realization['link']; ?>" target="<?php echo $realization['target']; ?>">
 						<div class="article__text">
 							<p class="article_<?php echo $realization['realization_id']; ?> hidden"><?php echo $realization['realization_id']; ?></p>
 							<h2><?php echo $realization['title']; ?></h2>
@@ -57,7 +100,10 @@
 							<img src="./assets/images/<?php echo $realization['image']; ?>" alt="realization_image <?php echo $realization['alt_image']; ?>" title="<?php echo $realization['title_image']; ?>">
 						</div> 
 				</a>
-                <?php endforeach; ?>     
+                <?php endforeach; ?>   
+				<div id="message" class="message directionRow center hidden">  
+					<p>Aucune réalisation ne correspond à cette demande.<p>
+				</div>
             </div>
 
 		</section>
@@ -65,7 +111,7 @@
 
 	<!-- FOOTER -->
     <?php include_once './footer.php'; ?>
-
+	<script src="./assets/js/filter_realization.js"></script>
 </body>
 
 </html>
